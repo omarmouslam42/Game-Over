@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/Game-Over/static/css/main.9c7d8b5b.css",
-    "main.js": "/Game-Over/static/js/main.27b2d177.js",
+    "main.js": "/Game-Over/static/js/main.cb48b2c0.js",
     "static/js/787.d1340d69.chunk.js": "/Game-Over/static/js/787.d1340d69.chunk.js",
     "static/media/fa-solid-900.ttf": "/Game-Over/static/media/fa-solid-900.b1a653db79258eeccc5d.ttf",
     "static/media/fa-brands-400.ttf": "/Game-Over/static/media/fa-brands-400.450a5c898f0b184b968b.ttf",
@@ -13,11 +13,11 @@
     "static/media/fa-v4compatibility.woff2": "/Game-Over/static/media/fa-v4compatibility.4ee7f902d88f819e251c.woff2",
     "index.html": "/Game-Over/index.html",
     "main.9c7d8b5b.css.map": "/Game-Over/static/css/main.9c7d8b5b.css.map",
-    "main.27b2d177.js.map": "/Game-Over/static/js/main.27b2d177.js.map",
+    "main.cb48b2c0.js.map": "/Game-Over/static/js/main.cb48b2c0.js.map",
     "787.d1340d69.chunk.js.map": "/Game-Over/static/js/787.d1340d69.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.9c7d8b5b.css",
-    "static/js/main.27b2d177.js"
+    "static/js/main.cb48b2c0.js"
   ]
 }
