@@ -1,25 +1,60 @@
-import logo from './logo.svg';
-import './App.css';
+import { useContext } from "react";
+import { createBrowserRouter, Navigate, RouterProvider } from "react-router-dom";
+import Category from "./category/Category";
+import GamesDetails from "./gameDetails/GamesDetails";
+import Games from "./Games/Games";
+import { DataContext } from "./GamesContext/GamesContext";
+import Home from "./Home/Home";
+import Login from "./Login/Login";
+import Navbar from "./Navbar/Navbar";
+import Platform from "./platform/Platform";
+import Reg from "./Regester/Reg";
+import SortBy from "./sortBy/SortBy";
+
+
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+  const {loginTkn} = useContext(DataContext);
+
+  function ProtectRoute(props) {
+    if (loginTkn == null) {
+      //m3ml4 login
+      return<Navigate to='/login'/>}
+      else{
+        return <>{props.children}</>
+      }
+  }
+
+
+  const router = createBrowserRouter([
+    {path:"" , element: <Navbar/>,children:[
+      {path:'Home',element:<ProtectRoute><Home /></ProtectRoute>},
+      {path:'',element:<ProtectRoute><Home /></ProtectRoute>},
+      {path:'Games',element: <ProtectRoute><Games /></ProtectRoute>},
+      {path:'Reg',element:<ProtectRoute><Reg /></ProtectRoute>},
+      {path:'platform',element:<ProtectRoute><Platform /></ProtectRoute>,children:[
+        {path:":pf"}
+      ]},
+      {path:'sort-by',element:<ProtectRoute><SortBy /></ProtectRoute>,children:[
+        {path:":sb"}
+      ]},
+      {path:'category',element:<ProtectRoute><Category /></ProtectRoute>,children:[
+        {path:":categ"}
+      ]},
+      {path:'GamesDetails',element:<ProtectRoute><GamesDetails /></ProtectRoute>,children:[
+        {path:":id"}
+    ]},
+      {path:'login',element:<Login />},
+      {path: "*", element: <h2>4 0 4</h2>},
+    ]}
+  ])
+
+
+
+  return <>
+    <RouterProvider router={router}/>
+  </>
 }
 
 export default App;
