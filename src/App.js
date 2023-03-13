@@ -29,10 +29,12 @@ function App() {
 
   const router = createBrowserRouter([
     {path:"" , element: <Navbar/>,children:[
+      {path:'',element:<Login />},
+      {path:'login',element:<Login />},
       {path:'Home',element:<ProtectRoute><Home /></ProtectRoute>},
-      {path:'',element:<ProtectRoute><Home /></ProtectRoute>},
+      // {path:'',element:<ProtectRoute><Home /></ProtectRoute>},
       {path:'Games',element: <ProtectRoute><Games /></ProtectRoute>},
-      {path:'Reg',element:<ProtectRoute><Reg /></ProtectRoute>},
+      {path:'Reg',element:<Reg />},
       {path:'platform',element:<ProtectRoute><Platform /></ProtectRoute>,children:[
         {path:":pf"}
       ]},
@@ -44,8 +46,7 @@ function App() {
       ]},
       {path:'GamesDetails',element:<ProtectRoute><GamesDetails /></ProtectRoute>,children:[
         {path:":id"}
-    ]},
-      {path:'login',element:<Login />},
+    ]},  
       {path: "*", element: <h2>4 0 4</h2>},
     ]}
   ])
